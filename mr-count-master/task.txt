@@ -1,0 +1,12 @@
+•	Upload dataset on HDFS;
+•	Write MR jobs to count amount of all the tags in the dataset (use your user.profile.tags.us.txt from HDP to map TAGs with dataset like dataset_User Tags = user.profile.tags.us.txt_Id, try to use combiner & distributed cache). 
+Save the output in text files on HDFS with rows as follow: TAG,COUNT;
+•	Write MR jobs to count amount of visits (count(*)) by IP and spends (sum(Bidding price)) by IP (try to use combiner & custom writable data type). 
+Save output as Sequence file compressed with Snappy (key is IP, and value is custom object for visits and spends);
+•	Add MR Unit tests for your Mapper/Reducer
+•	Use counters to get stats how many records of IE, FireFox, Opera, Chrome or other browser were detected,
+parse it from UserAgent string: 
+
+b382c1c156dcbbd5b9317cb50f6a747b	20130606000104000	Vh16OwT6OQNUXbj	mozilla/4.0 (compatible; msie 6.0; windows nt 5.1; sv1; qqdownload 718)	180.127.189.*	80	87	1	tFKETuqyMo1mjMp45SqfNX	249b2c34247d400ef1cd3c6bfda4f12a		mm_11402872_1272384_3182279	300	250	1	1	0	00fccc64a1ee2809348509b7ac2a97a5	227	3427	282825712746	0)
+
+and print them in STDOUT of Driver

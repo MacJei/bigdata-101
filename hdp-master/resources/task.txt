@@ -1,0 +1,4 @@
+•	Upload user.profile.tags.us.txt on HDFS;
+•	Write your own YARN Applications, which will read all the links from user.profile.tags.us.txt (Destination URL field), 
+crawl the pages and tag them (split into word all text fields and group them, count the most recent words). 
+Full fill Keyword Value field with 10 most popular tags. 

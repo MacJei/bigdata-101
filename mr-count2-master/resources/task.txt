@@ -1,0 +1,3 @@
+•	Write MR a job which will sort all the lines in the dataset first by iPinyou ID and then by Timestam,
+find iPinyou ID with the biggest amount of site-impression (Stream Id = 1);
+•	Add MR Unit tests for your Mapper/Reducer.

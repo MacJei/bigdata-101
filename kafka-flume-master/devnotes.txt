@@ -1,0 +1,26 @@
+Kafka topics
+/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic logs1
+/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic logs1
+
+List Kafka topics
+/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --list --zookeeper localhost:2181
+
+See Kafka Topic messages
+/usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic logs1 --from-beginning
+
+Data ingestion
+cd /root/projects/
+git clone https://github.com/anevsky/kafka-flume.git
+cd /kafka-flume
+git pull origin master
+mvn package
+
+/root/projects/kafka-flume/target/kafka-exe-jar \
+producer \
+logs1 \
+/root/projects/kafka-flume/dataset/kafka
+
+/root/projects/kafka-flume/target/kafka-exe-jar \
+consumer \
+logs1 \
+/root/projects/kafka-flume/dataset/kafka
